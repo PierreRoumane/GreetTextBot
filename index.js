@@ -32,6 +32,3 @@ function check_in_sentence(str, tab)
         else
             return (-1);
 }
-
-client.login('OTM4ODYxNzg4MjExMDg1MzMy.YfwdLQ.Wwgufsm_40XGVmERdrKTfxaBIp8');
-
