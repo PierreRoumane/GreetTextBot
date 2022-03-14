@@ -2,19 +2,22 @@ const { sign } = require('crypto');
 const { channel } = require('diagnostics_channel');
 const Discord = require('discord.js');
 const client = new Discord.Client();
+console.log(`Lauching Bot...`);
 
 client.on('ready', () => {
-    console.log(`Le Fameux Text Bot est arrivé parmi nous!`);
+    console.log('lauched')
 });
 
 client.on('message', msg => {
 
     const string = new String(msg);
-    
-    //word bank // add a word in the bank when you add a feature
-    tab = ['queen', 'nice', 'matis', 'mathis', 'bite', "eternium", "ping", "meme", 'pierre', 'penis', 'vagin', 'meilleur serv', "boy"];
+    console.log(msg);
+
+    //word bank// add a word in the bank when you add a feature
+    tab = ['🙂', 'queen', 'nice', 'matis', 'mathis', 'bite', "eternium", "ping", "meme", 'pierre', 'penis', 'vagin', 'meilleur serv', "boy"];
 
     let keyword = check_in_sentence(string.toLowerCase(), tab)
+    
     if (msg.author.username != 'GreetTextBot' && msg.channel.name == 'le-bot') {
         if (keyword === 'ping')
             msg.reply('pong');
@@ -27,7 +30,7 @@ client.on('message', msg => {
         else if (keyword === 'meilleur serv')
             msg.reply('MEILLEUR SERV');
 
-        //bad words
+        //curse words
         else if (keyword === 'bite' || keyword === 'penis' || keyword == 'vagin') {
             msg.reply('Get your mind out of the gutter PLEASE.');
             msg.delete();
@@ -35,13 +38,17 @@ client.on('message', msg => {
 
         //gifs reactions
         else if (keyword === 'queen')
-            msg.reply('https://tenor.com/view/nia-xenoblade-chronicles2-nia-sawg-gif-18511161');
+            msg.channel.send('https://tenor.com/view/nia-xenoblade-chronicles2-nia-sawg-gif-18511161');
         else if (keyword === 'boy')
-            msg.reply('https://tenor.com/view/kratos-boy-kratos-boy-boi-god-of-war-gif-12278930');
+            msg.channel.send('https://tenor.com/view/kratos-boy-kratos-boy-boi-god-of-war-gif-12278930');
         else if (keyword === 'mathis' || keyword === 'matis')  
-            msg.reply('https://tenor.com/view/anime-lucina-irritated-dance-peace-sign-gif-13933637');
+            msg.channel.send('https://tenor.com/view/anime-lucina-irritated-dance-peace-sign-gif-13933637');
         else if (keyword === 'nice')
-            msg.reply('https://tenor.com/view/pootis-engage-yes-very-yes-heavy-tf2-gif-17755424');  
+            msg.channel.send('https://tenor.com/view/pootis-engage-yes-very-yes-heavy-tf2-gif-17755424');  
+        else if (keyword === '🙂') {
+            msg.channel.send('https://tenor.com/view/smiling-cat-creepy-cat-cat-zoom-kitty-gif-12199043https://tenor.com/view/axolotl-smile-happy-cute-animal-smiling-gif-12642274');
+            msg.delete();
+        }
     }
 });
 
