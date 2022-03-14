@@ -13,9 +13,11 @@ client.on('message', msg => {
     const string = new String(msg);
 
     //word bank// add a word in the bank when you add a feature
-    tab = ['🙂', 'queen', 'nice', 'matis', 'mathis', 'bite', "eternium", "ping", "meme", 'pierre', 'penis', 'vagin', 'meilleur serv', "boy"];
+    bank = ["eternium", "ping", "meme", 'pierre', 'meilleur serv',
+            'bite',  'penis', 'vagin',
+            '🙂', 'queen', 'nice', 'matis', 'mathis', "boy"];
 
-    let keyword = check_in_sentence(string.toLowerCase(), tab)
+    let keyword = check_in_sentence(string.toLowerCase(), bank)
     
     if (msg.author.username != 'GreetTextBot' && msg.channel.name == 'le-bot') {
         if (keyword === 'ping')
@@ -45,12 +47,11 @@ client.on('message', msg => {
         else if (keyword === 'nice')
             msg.channel.send('https://tenor.com/view/pootis-engage-yes-very-yes-heavy-tf2-gif-17755424');  
         else if (keyword === '🙂') {
-            msg.channel.send('https://tenor.com/view/smiling-cat-creepy-cat-cat-zoom-kitty-gif-12199043https://tenor.com/view/axolotl-smile-happy-cute-animal-smiling-gif-12642274');
+            msg.channel.send('https://tenor.com/view/axolotl-smile-happy-cute-animal-smiling-gif-12642274');
             msg.delete();
         }
     }
 });
-
 
 //To detect a word in a sentence
 function check_in_sentence(str, tab)
@@ -61,3 +62,5 @@ function check_in_sentence(str, tab)
     }
     return (-1);
 }
+
+client.login('OTM4ODYxNzg4MjExMDg1MzMy.YfwdLQ.LfJm3hZdAIu4RhwM3ExSRRWNrBc');
