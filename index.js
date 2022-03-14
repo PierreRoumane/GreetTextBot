@@ -11,7 +11,6 @@ client.on('ready', () => {
 client.on('message', msg => {
 
     const string = new String(msg);
-    console.log(msg);
 
     //word bank// add a word in the bank when you add a feature
     tab = ['🙂', 'queen', 'nice', 'matis', 'mathis', 'bite', "eternium", "ping", "meme", 'pierre', 'penis', 'vagin', 'meilleur serv', "boy"];
