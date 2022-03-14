@@ -62,5 +62,3 @@ function check_in_sentence(str, tab)
     }
     return (-1);
 }
-
-client.login('OTM4ODYxNzg4MjExMDg1MzMy.YfwdLQ.LfJm3hZdAIu4RhwM3ExSRRWNrBc');
