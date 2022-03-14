@@ -10,8 +10,9 @@ client.on('ready', () => {
 client.on('message', msg => {
 
     const string = new String(msg);
+    //console.log(msg.author.username);
     
-    tab = ["eternium", "ping", "meme", 'no', 'pierre', 'penis'];
+    tab = ['mathis', 'bite', "eternium", "ping", "meme", 'pierre', 'penis', 'vagin', 'meilleur serv', "boy"];
 
     let keyword = check_in_sentence(string.toLowerCase(), tab)
     
@@ -21,8 +22,18 @@ client.on('message', msg => {
         msg.reply('Work in progress');
     else if (keyword === 'meme')
         msg.reply('Work in progress');
-    else if (keyword === 'penis')
-        msg.reply('Get your mind out of the gutter PLEASE');
+    else if (keyword === 'pierre')
+        msg.reply('Who DARES to speak about his esteemed Ass?');
+    else if (keyword === 'bite' || keyword === 'penis' || keyword == 'vagin' && msg.author.username != 'Chaika9') {
+        msg.reply('Get your mind out of the gutter PLEASE.');
+        msg.delete();
+    }
+    else if (keyword === 'meilleur serv')
+        msg.reply('MEILLEUR SERV');
+    else if (keyword === 'boy' && msg.author.username != 'GreetTextBot')
+        msg.reply('https://tenor.com/view/kratos-boy-kratos-boy-boi-god-of-war-gif-12278930');
+    else if (keyword === 'mathis' || keyword === 'matis')  
+        msg.reply('https://tenor.com/view/anime-lucina-irritated-dance-peace-sign-gif-13933637');
 });
 
 
