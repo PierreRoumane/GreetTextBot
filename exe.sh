@@ -1,1 +1,1 @@
-nodemon --inspect index.js login.js 
+nodemon --inspect index.js --inspect login.js
