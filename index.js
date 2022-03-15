@@ -13,13 +13,13 @@ client.on('message', msg => {
     const string = new String(msg);
 
     //word bank// add a word in the bank when you add a feature
-    bank = ["eternium", "ping", "meme", 'pierre', 'meilleur serv',
-            'bite',  'penis', 'vagin',
+    bank = ["eternium", "ping", "meme", 'pierre', 'meilleur serv', 'hello skynet',
+            'bite',  'penis', 'vagin', 'merde', 'putain', 'ptn',
             '🙂', 'queen', 'nice', 'matis', 'mathis', "boy"];
 
     let keyword = check_in_sentence(string.toLowerCase(), bank)
     
-    if (msg.author.username != 'GreetTextBot' && msg.channel.name == 'le-bot') {
+    if (msg.author.username != 'Skynet' && msg.channel.name == 'le-bot') {
         if (keyword === 'ping')
             msg.reply('pong');
         else if (keyword === 'eternium')
@@ -30,12 +30,19 @@ client.on('message', msg => {
             msg.reply('Who DARES to speak about his esteemed Ass?');
         else if (keyword === 'meilleur serv')
             msg.reply('MEILLEUR SERV');
+        else if (keyword === 'hello skynet')
+            msg.channel.sent('And a hello to you! bip boup');
 
         //curse words
         else if (keyword === 'bite' || keyword === 'penis' || keyword == 'vagin') {
             msg.reply('Get your mind out of the gutter PLEASE.');
             msg.delete();
         }
+        else if (keyword == 'putain' || keyword == 'ptn' || keyword == 'merde') {
+            msg.reply('THIS IS A CHRISTIAN SERVER PLEASE');
+            msg.delete();
+        }
+
 
         //gifs reactions
         else if (keyword === 'queen')
