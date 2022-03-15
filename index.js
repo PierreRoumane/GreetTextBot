@@ -1,3 +1,6 @@
+const BOT_NAME = 'Skynet';
+const CHANNEL_NAME = 'le-bot';
+
 const { sign } = require('crypto');
 const { channel } = require('diagnostics_channel');
 const Discord = require('discord.js');
@@ -19,9 +22,9 @@ client.on('message', msg => {
 
     let keyword = check_in_sentence(string.toLowerCase(), bank)
     
-    if (msg.author.username != 'Skynet' && msg.channel.name == 'le-bot') {
+    if (msg.author.username != BOT_NAME && msg.channel.name == CHANNEL_NAME) {
         if (keyword === 'ping')
-            msg.reply('pong');
+            msg.channel.send('pong');
         else if (keyword === 'eternium')
             msg.reply('Work in progress');
         else if (keyword === 'meme')
@@ -31,7 +34,7 @@ client.on('message', msg => {
         else if (keyword === 'meilleur serv')
             msg.reply('MEILLEUR SERV');
         else if (keyword === 'hello skynet')
-            msg.channel.sent('And a hello to you! bip boup');
+            msg.channel.send('*bip boup* And a hello to you! *bip boup*');
 
         //curse words
         else if (keyword === 'bite' || keyword === 'penis' || keyword == 'vagin') {
